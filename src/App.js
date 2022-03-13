@@ -1,23 +1,33 @@
 import logo from './logo.svg';
+import { lazy, Suspense } from "react"
 import './App.css';
+import { CircularProgress } from "@material-ui/core"
+import { Route, Switch, BrowserRouter } from "react-router-dom"
+import routeComponent from './routes/routeComponent';
+const Home = lazy(() => import("./component/Home"))
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Suspense fallback={<CircularProgress />}>
+        <BrowserRouter>
+          <Switch>
+            {routeComponent.map((prop, key) => {
+              return (
+                <Route
+                  exact path={prop.path}
+                  component={prop.component}
+                  key={key}
+                ></Route>
+              )
+            })}
+            <Route
+              exact path={"/home"}
+              component={Home}
+            ></Route>
+          </Switch>
+        </BrowserRouter>
+      </Suspense>
     </div>
   );
 }
