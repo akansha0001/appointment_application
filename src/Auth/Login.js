@@ -4,12 +4,11 @@ const Login = () => {
     return (
         <div>
             <h1>
-                "Its a Login Page"
+                Login Page
             </h1>
-            <ul>
-                <li><a href="/auth/user/login">User Login</a></li>
-                <li><a href="/auth/lawyer/login">Lawyer Login</a></li>
-            </ul>
+            <a href="/login/user">User Login</a><br />
+            <a href="/login/lawyer">Lawyer Login</a>
+
         </div>
     )
 }

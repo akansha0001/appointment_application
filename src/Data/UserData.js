@@ -1,14 +1,13 @@
-import { Divorce, Criminal, Property } from "./Constant"
 export const user = [
     {
         user: "Akansha",
-        password: "ab.cd@01",
-        type: user
+        password: "12345678",
+        type: "user"
     },
     {
         user: "lawyer1",
-        password: "ab.cd@01",
-        type: lawyer
+        password: "12345678",
+        type: "lawyer"
     },
 ]
 
@@ -18,25 +17,25 @@ export const user = [
 //     Property: "property"
 // }
 
-const lawyer = [
+export const lawyer = [
     {
         user: "lawyer1",
-        speciality=[{ Divorce: 500 }, { Criminal: 400 }],
-        Availability=[],
+        speciality: [{ Divorce: 500 }, { Criminal: 400 }],
+        Availability: [],
     },
     {
         user: "lawyer2",
-        speciality=[],
-        Availability=[],
+        speciality: [],
+        Availability: [],
     },
     {
         user: "lawyer3",
-        speciality=[],
-        Availability=[],
+        speciality: [],
+        Availability: [],
     },
     {
         user: "lawyer4",
-        speciality=[],
-        Availability=[],
+        speciality: [],
+        Availability: [],
     },
 ]
